@@ -1,0 +1,25 @@
+# Eclipse
+.classpath
+.project
+.settings/
+target/
+*.log
+bin/
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+/.apt_generated/
+/.apt_generated_tests/
+/AllegroSand/
+
+# Tool folders and reports
+.allure/
+allure-results/
+allure-report/
+target/
+
+
+#tokens
+tokens/

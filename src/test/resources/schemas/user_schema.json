@@ -1,0 +1,48 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"required": ["id", "login", "email", "baseMarketplace", "company", "features"],
+	"properties": {
+		"id" : {
+			"type": "string"
+		},
+		"login": {
+			"type": "string"
+		},
+		"email": {
+			"type": "string"
+		},
+		"baseMarketplace":{
+			"type": "object",
+			"required": ["id"],
+			"properties": {
+				"id": {
+					"type":"string"
+					}
+			},
+			"additionalProperties": false
+		},
+		"company": {
+			"type":"object",
+			"required": ["name", "taxId"],
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+				"taxId": {
+					"type":"string"
+				}
+			},
+			"additionalProperties": false
+			},
+		"features": {
+			"type": "array",
+			"items": {
+				"type": "string"
+			},
+			"minItems": 0
+		}
+		
+	},
+	"additionalProperties": true	
+}

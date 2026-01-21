@@ -1,0 +1,97 @@
+
+				{
+  "name": "Test Product Title __ISBN__",  
+  "category": {                                             
+    "id": "79157"                                           
+  },
+  "language": "en-US",                                      
+  "parameters": [
+    {
+      "id": "223545",
+      "values": [
+        "Test Title with random Isbn in it __ISBN__"
+      ]                                                     
+    },
+    {
+      "id": "223489",
+      "values": [
+        "Author Name1",
+        "Author Name Second", 
+        "Author Name Third"
+      ]
+    },
+    {
+      "id": "2868",
+      "valuesIds": ["2868_1"]
+    },
+    {
+        "id": "223541",
+        "valuesIds": ["223541_563273"]
+    },
+    {
+        "id": "249857",
+        "valuesIds": ["249857_1769440"]
+    },
+    {
+        "id": "249493",
+        "valuesIds": ["249493_1645911"]
+    },   
+    {
+      "id": "75",
+      "valuesIds": [
+        "75_2"
+      ]                                                     
+    },
+    {
+      "id": "74",
+      "values": [
+        "2014"
+      ]                                                     
+    },
+    {
+      "id": "24648",
+      "valuesIds": [
+        "24648_1",
+        "24648_2"
+      ]
+    },    
+    {
+      "id": "223333",
+      "values": [
+        "20.5"
+      ]
+    },
+    {
+      "id": "245669",
+      "name": "ISBN",
+      "valuesLabels": [
+          "__ISBN__"
+      ],
+      "values": [
+          "__ISBN__"
+                  ],
+      "unit": null,
+      "options": {
+          "identifiesProduct": true,
+          "isGTIN": true
+       }
+    }
+  ],
+  "images": [
+    {
+      "url": "https://a.allegroimg.allegrosandbox.pl/original/11e24f/32cd712c41ada5fe3f3c41836c5b"
+    }
+  ],
+  "description": {
+    "sections": [
+      {
+        "items": [
+          {
+            "type": "TEXT",
+            "content": "<p>Test description</p>"
+          }
+        ]
+      }
+    ]
+  }
+  }
