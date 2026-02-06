@@ -1,0 +1,12 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/me",
+    "headers": { "Authorization": { "matches": "Bearer (ey.*|mock_access_token)" } }
+  },
+  "response": {
+    "status": 200,
+    "bodyFileName": "user_me_res.json",
+    "headers": { "Content-Type": "application/vnd.allegro.public.v1+json" }
+  }
+}

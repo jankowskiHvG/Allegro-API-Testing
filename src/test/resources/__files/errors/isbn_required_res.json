@@ -1,0 +1,8 @@
+{
+  "errors": [
+    {
+      "code": "UnableToCreateProductWithoutAllRequiredParametersException",
+      "userMessage": "You cannot create a product without providing correct values for all the required parameters: [ISBN]"
+    }
+  ]
+}

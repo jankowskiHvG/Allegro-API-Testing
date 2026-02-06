@@ -1,0 +1,13 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/sale/product-proposals"
+  },
+  "response": {
+    "status": 201,
+    "bodyFileName": "create_product_proposal_res.json",
+    "headers": {
+      "Content-Type": "application/vnd.allegro.public.v1+json"
+    }
+  }
+}

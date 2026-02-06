@@ -35,7 +35,8 @@ public class CreateProductProposalNegativeTest  extends BaseTest {
 		var req = ProductProposalFactory.valid().build();
 
 		//1st create request attempt - should be successful
-		Response firstResponse = ProductProposalApiClient.create(req);
+		
+		Response firstResponse = ProductProposalApiClient.create(req, "ShouldRejectDuplicate"); //"ShouldRejectDuplicate" for mock mode purpose only
 		
 		firstResponse.then()
 			.statusCode(201)
@@ -46,12 +47,12 @@ public class CreateProductProposalNegativeTest  extends BaseTest {
 		
 		//Time needed to index new product
 		Awaitility.await()
-			.atMost(Duration.ofSeconds(40))
-			.pollInterval(Duration.ofSeconds(20))
+			.atMost(Duration.ofSeconds(42))
+			.pollInterval(Duration.ofSeconds(9))
 			.until(() -> ProductInfoApiClient.getProduct(createdProductId).getStatusCode() == 200);
 		
 		//2nd request - creating duplicate attempt
-		Response duplicateResponse = ProductProposalApiClient.create(req);
+		Response duplicateResponse = ProductProposalApiClient.create(req, "ShouldRejectDuplicate");
 		
 		
 		duplicateResponse.then()
@@ -65,9 +66,9 @@ public class CreateProductProposalNegativeTest  extends BaseTest {
 	@MethodSource("arguments.InvalidIsbnArguments#invalidIsbn")
 	@Tag("Validation")
 	@DisplayName("422: Should reject invalid ISBN field")
-	public void ShouldRejectInvalidEAN(Supplier<String> invalidIsbn, String expectedMessage) {
+	public void ShouldRejectInvalidEAN(String testCaseName, Supplier<String> isbnSupplier, String expectedMessage) {
 		
-		String isbn = invalidIsbn.get();
+		String isbn = isbnSupplier.get();
 		
 		var reqBuilder = ProductProposalFactory.valid()
 				.withParamValue("245669", isbn);
@@ -76,20 +77,10 @@ public class CreateProductProposalNegativeTest  extends BaseTest {
 		
 		//Sending a request with invalid isbn
 		
-		Response response = ProductProposalApiClient.create(req);
+		Response response = ProductProposalApiClient.create(req, testCaseName);
 		
 		response.then()
 			.statusCode(422)
-			.body("errors[0].userMessage", containsString(expectedMessage));
-			
-			
-		
-				
-		
-		
-				
+			.body("errors[0].userMessage", containsString(expectedMessage));			
 	}
-	
-	
-
 }

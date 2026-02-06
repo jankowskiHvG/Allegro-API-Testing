@@ -1,0 +1,10 @@
+{
+  "id": "mock-58d59679-3242-46d9-9374-daa26aaf68e0",
+  "name": "Mocked Product Proposal",
+  "category": {
+    "id": "79153"
+  },
+  "publication": {
+    "status": "PROPOSED"
+  }
+}

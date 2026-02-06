@@ -17,7 +17,7 @@ public class ProductProposalFactory {
 
 		
 		return dto.ProductProposalRequest.builder()
-				.name("Test Title with ISBN "+ isbn)
+				.name("Test Title of the Product")
 				.category(ProductProposalRequest.Category.builder()
 						.id("79157")
 						.build())
@@ -25,7 +25,7 @@ public class ProductProposalFactory {
 				.parameters(List.of(
 						ProductProposalRequest.Parameter.builder()
 						.id("223545")
-						.values(List.of("Test Title with ISBN " + isbn))
+						.values(List.of("Test Title"))
 						.build(),
 						ProductProposalRequest.Parameter.builder()
 						.id("223489")

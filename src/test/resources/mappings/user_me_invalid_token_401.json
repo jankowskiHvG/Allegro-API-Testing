@@ -1,0 +1,12 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/me",
+    "headers": { "Authorization": { "equalTo": "Bearer inv41id.t0k3N" } }
+  },
+  "response": {
+    "status": 401,
+    "body": "{ \"error\": \"invalid_token\", \"error_description\": \"Cannot convert access token to JSON\" }",
+    "headers": { "Content-Type": "application/json; charset=utf-8" }
+  }
+}

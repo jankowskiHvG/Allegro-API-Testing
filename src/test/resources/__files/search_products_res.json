@@ -1,0 +1,13 @@
+{
+  "products": [
+    {
+      "id": "015d3c29-7fb9-41dc-92a5-5dafea197aa2",
+      "name": "iPhone 15 case Magsoft",
+      "category": {
+        "id": "77746",
+        "name": "Telefony komórkowe"
+      }
+    }
+  ],
+  "nextPage": null
+}

@@ -1,8 +1,6 @@
 package arguments;
 
 import java.util.stream.Stream;
-
-import org.junit.jupiter.api.Named;
 import org.junit.jupiter.params.provider.Arguments;
 import com.github.javafaker.Faker;
 import java.util.function.Supplier;
@@ -24,16 +22,16 @@ public class InvalidIsbnArguments {
 		
 		
 		return Stream.of(
-				Arguments.of(Named.of("12 digits instead of 13", (Supplier<String>) () -> faker.code().isbn13().substring(0,12)), ISBN_INCORRECT),
-				Arguments.of(Named.of("14 digits instead of 13", (Supplier<String>) () -> faker.code().isbn13() + faker.number().randomDigit()), ISBN_INCORRECT),
-				Arguments.of(Named.of("invalid checksum", (Supplier<String>) () -> isbnWithInvalidChecksum(faker.code().isbn13())), ISBN_INCORRECT),
-				Arguments.of(Named.of("null value", (Supplier<String>) () -> null),ISBN_NOT_NULL),
-				Arguments.of(Named.of("Empty string", (Supplier<String>) () -> ""), ISBN_REQUIRED), 
-				Arguments.of(Named.of("Spaces only", (Supplier<String>) () -> " ".repeat(13)),ISBN_REQUIRED),
-				Arguments.of(Named.of("Zero width space character inside ISBN", (Supplier<String>) () -> isbnZeroSpaceWidthInside(faker.code().isbn13())), ISBN_INVALID_CHARS),
-				Arguments.of(Named.of("Zero width space char instead of one digit", (Supplier<String>) () -> isbnReplaceDigitZeroSpaceWidth(faker.code().isbn13())), ISBN_INVALID_CHARS),
-				Arguments.of(Named.of("Dashes inside ISBN", (Supplier<String>) () -> withSeparators(faker.code().isbn13(), "-")), ISBN_INVALID_CHARS),
-				Arguments.of(Named.of("Spaces as separator", (Supplier<String>) () -> withSeparators(faker.code().isbn13(), " ")), ISBN_INVALID_CHARS));
+				Arguments.of("12 digits instead of 13", (Supplier<String>) () -> faker.code().isbn13().substring(0,12), ISBN_INCORRECT),
+				Arguments.of("14 digits instead of 13", (Supplier<String>) () -> faker.code().isbn13() + faker.number().randomDigit(), ISBN_INCORRECT),
+				Arguments.of("invalid checksum", (Supplier<String>) () -> isbnWithInvalidChecksum(faker.code().isbn13()), ISBN_INCORRECT),
+				Arguments.of("null value", (Supplier<String>) () -> null,ISBN_NOT_NULL),
+				Arguments.of("Empty string", (Supplier<String>) () -> "", ISBN_REQUIRED), 
+				Arguments.of("Spaces only", (Supplier<String>) () -> " ".repeat(13),ISBN_REQUIRED),
+				Arguments.of("Zero width space character inside ISBN", (Supplier<String>) () -> isbnZeroSpaceWidthInside(faker.code().isbn13()), ISBN_INVALID_CHARS),
+				Arguments.of("Zero width space char instead of one digit", (Supplier<String>) () -> isbnReplaceDigitZeroSpaceWidth(faker.code().isbn13()), ISBN_INVALID_CHARS),
+				Arguments.of("Dashes inside ISBN", (Supplier<String>) () -> withSeparators(faker.code().isbn13(), "-"), ISBN_INVALID_CHARS),
+				Arguments.of("Spaces as separator", (Supplier<String>) () -> withSeparators(faker.code().isbn13(), " "), ISBN_INVALID_CHARS));
 		}
 	
 	
