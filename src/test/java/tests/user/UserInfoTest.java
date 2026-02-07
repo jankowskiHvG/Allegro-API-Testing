@@ -6,9 +6,10 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import helpers.AuthHelper;
-import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
 import tests.BaseTest;
+import utils.Config;
+
 import static org.hamcrest.Matchers.notNullValue;
 import java.io.File;
 import io.restassured.module.jsv.JsonSchemaValidator;
@@ -18,18 +19,20 @@ import io.restassured.module.jsv.JsonSchemaValidator;
 public class UserInfoTest extends BaseTest {
 	
 	private static final String INVALID_TOKEN = "inv41id.t0k3N";
+	String token = AuthHelper.getAccessToken();
+	String baseUrl = Config.get("baseUrl");
 	
 	@DisplayName("GET /me returns 200 and response matches JSON schema")
 	@Test
 	public void shouldReturnUserInfo() {
-		String token = AuthHelper.getAccessToken();
+		
 		
 		RestAssured
 			.given()
 			.header("Authorization", "Bearer " + token)
 			.header("Accept", "application/vnd.allegro.public.v1+json")
 			.when()
-			.get("https://api.allegro.pl.allegrosandbox.pl/me")
+			.get(baseUrl + "/me")
 			.then()
 			.statusCode(200)
 			.body("id", notNullValue())
@@ -47,7 +50,7 @@ public class UserInfoTest extends BaseTest {
 				.header("Accept", "application/vnd.allegro.public.v1+json")
 				.log().all()
 				.when()				
-				.get("https://api.allegro.pl.allegrosandbox.pl/me")
+				.get(baseUrl + "/me")
 				.then()
 				.statusCode(401)
 				.extract().response();
@@ -63,7 +66,7 @@ public class UserInfoTest extends BaseTest {
 				.header("Accept", "application/vnd.allegro.public.v1+json")
 				.log().all()
 				.when()
-				.get("https://api.allegro.pl.allegrosandbox.pl/me")
+				.get(baseUrl + "/me")
 				.then()
 				.statusCode(401)
 				.extract().response();

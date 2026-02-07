@@ -1,0 +1,12 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/me",
+    "headers": { "Authorization": { "absent": true } }
+  },
+  "response": {
+    "status": 401,
+    "body": "{ \"error\": \"unauthorized\", \"error_description\": \"Full authentication is required to access this resource\" }",
+    "headers": { "Content-Type": "application/json; charset=utf-8" }
+  }
+}

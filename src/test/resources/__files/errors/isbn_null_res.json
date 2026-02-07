@@ -1,0 +1,8 @@
+{
+  "errors": [
+    {
+      "code": "ParameterException.InvalidParameterDtoException",
+      "userMessage": "Either values, valuesIds, or rangeValue must be defined for parameter 245669."
+    }
+  ]
+}

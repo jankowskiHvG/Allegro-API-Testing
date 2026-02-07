@@ -29,7 +29,7 @@ public class CreateProductProposalTest extends BaseTest {
 	
 		var req = reqBuilder.build();
 	
-		Response response = ProductProposalApiClient.create(req);
+		Response response = ProductProposalApiClient.create(req, null);
 	
 		response.then()
 		.statusCode(201)

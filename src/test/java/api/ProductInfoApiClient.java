@@ -22,6 +22,5 @@ public class ProductInfoApiClient {
 				.then()
 				.extract()
 				.response();
-		
-}
+	}
 }

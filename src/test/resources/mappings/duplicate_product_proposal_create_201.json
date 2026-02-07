@@ -1,0 +1,27 @@
+{
+  "scenarioName": "DuplicateProductScenario",
+  "requiredScenarioState": "Started",
+  "newScenarioState": "CREATED",
+  "request": {
+    "method": "POST",
+    "url": "/sale/product-proposals",
+    "headers": {
+      "Mock-Trigger": {
+        "equalTo": "ShouldRejectDuplicate"
+      }
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": 
+	{
+      "Content-Type": "application/vnd.allegro.public.v1+json"
+    },
+    "jsonBody": {
+      "id": "f68b8797-9621-40f4-9e91-d630ae671c98",
+      "publication": {
+        "status": "PROPOSED"
+      }
+    }
+  }
+}

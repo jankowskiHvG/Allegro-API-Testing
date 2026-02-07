@@ -1,0 +1,60 @@
+{
+  "mappings": [
+    {
+      "request": {
+        "method": "POST",
+        "url": "/sale/product-proposals",
+        "headers": {
+          "Mock-Trigger": { "matches" : ".*digits.*|invalid checksum" }
+        }
+      },
+      "response": {
+        "status": 422,
+		"headers": { "Content-Type": "application/json; charset=utf-8" },
+        "bodyFileName": "errors/isbn_incorrect_value_res.json"
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "/sale/product-proposals",
+        "headers": {
+          "Mock-Trigger": { "matches" : "Spaces only|Empty string" }
+        }
+      },
+      "response": {
+        "status": 422,
+		"headers": { "Content-Type": "application/json; charset=utf-8" },
+        "bodyFileName": "errors/isbn_required_res.json"
+      }
+    },
+	{
+	  "request": {
+	    "method": "POST",
+	    "url": "/sale/product-proposals",
+	    "headers": {
+	      "Mock-Trigger": { "equalTo": "null value" }
+	    }
+	  },
+	  "response": {
+	    "status": 422,
+		"headers": { "Content-Type": "application/json; charset=utf-8" },
+	    "bodyFileName": "errors/isbn_null_res.json"
+	  }
+	},
+    {
+      "request": {
+        "method": "POST",
+        "url": "/sale/product-proposals",
+        "headers": {
+          "Mock-Trigger": { "matches" : "Dashes inside ISBN|Invalid characters.*|.*space.*|.*separator.*" }
+        }
+      },
+      "response": {
+        "status": 422,
+		"headers": { "Content-Type": "application/json; charset=utf-8" },
+        "bodyFileName": "errors/isbn_invalid_characters_res.json"
+      }
+    }
+  ]
+}

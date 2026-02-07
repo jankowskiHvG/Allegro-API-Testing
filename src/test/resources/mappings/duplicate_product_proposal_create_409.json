@@ -1,0 +1,30 @@
+{
+  "scenarioName": "DuplicateProductScenario",
+  "requiredScenarioState": "CREATED",
+  "request": {
+    "method": "POST",
+    "url": "/sale/product-proposals",
+    "headers": {
+      "Mock-Trigger": {
+        "equalTo": "ShouldRejectDuplicate"
+      }
+    }
+  },
+  "response": {
+    "status": 409,
+    "headers": {
+      "Content-Type": "application/vnd.allegro.public.v1+json"
+    },
+    "jsonBody": {
+      "errors": [
+        {
+          "code": "ProductDuplicate",
+          "userMessage": "Product already exists. Contact the application author.",
+          "metadata": {
+            "existingProductId": "f68b8797-9621-40f4-9e91-d630ae671c98"
+          }
+        }
+      ]
+    }
+  }
+}

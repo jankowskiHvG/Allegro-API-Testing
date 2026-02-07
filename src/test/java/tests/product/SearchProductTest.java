@@ -8,6 +8,7 @@ import io.qameta.allure.SeverityLevel;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 import tests.BaseTest;
+import utils.Config;
 import helpers.AuthHelper;
 
 @Tag("Smoke")
@@ -18,13 +19,14 @@ public class SearchProductTest extends BaseTest {
     @DisplayName("Smoke: Verify if product search returns results")
     public void searchShouldReturnResults() {
         String token = AuthHelper.getAccessToken();
+        String baseUrl = Config.get("baseUrl");
 
         given()
             .header("Authorization", "Bearer " + token)
             .header("Accept", "application/vnd.allegro.public.v1+json")
-            .queryParam("phrase", "iphone")
+            .queryParam("phrase", "iPhone 15 case")
         .when()
-            .get("https://api.allegro.pl.allegrosandbox.pl/sale/products")
+            .get(baseUrl+"/sale/products")
         .then()
             .statusCode(200)
             .body("products", not(empty()));

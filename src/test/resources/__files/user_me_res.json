@@ -1,0 +1,16 @@
+{
+    "id": "110763117",
+    "login": "GuitarAcc",
+    "firstName": "Jeremiah",
+    "lastName": "Johnson",
+    "email": "ljallegrosandboxtest@gmail.com",
+    "baseMarketplace": {
+        "id": "allegro-pl"
+    },
+    "company": {
+        "name": "Guitar Accessories Johnson",
+        "taxId": "1540648001"
+    },
+    "features": [
+    ]
+}

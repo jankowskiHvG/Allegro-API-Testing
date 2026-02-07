@@ -1,0 +1,8 @@
+{
+  "errors": [
+    {
+      "code": "ProductParameterGtinInvalid",
+      "userMessage": "Incorrect value for ISBN parameter."
+    }
+  ]
+}

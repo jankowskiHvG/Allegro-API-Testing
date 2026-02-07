@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import helpers.AuthHelper;
 import tests.BaseTest;
 
-public class GetAccessTokenTest extends BaseTest{
+public class GetAccessToken extends BaseTest{
 
 	@Test
 	public void ShouldReturnValidAccessToken() {
