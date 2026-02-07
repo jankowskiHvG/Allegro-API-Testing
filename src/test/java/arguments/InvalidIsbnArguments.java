@@ -7,12 +7,11 @@ import java.util.function.Supplier;
 
 public class InvalidIsbnArguments {
 
-	public static final Faker faker = new Faker();
+	private static final Faker faker = new Faker();
 	
 	public static final String ISBN_INCORRECT = "Incorrect value for ISBN parameter";
 	public static final String ISBN_INVALID_CHARS = "Invalid characters in ISBN parameter value";
 	public static final String ISBN_REQUIRED = "You cannot create a product without providing correct values for all the required parameters: [ISBN]";
-//	public static final String ISBN_LENGTH = "Incorrect ISBN parameter length";
 	public static final String ISBN_NOT_NULL = "Either values, valuesIds, or rangeValue must be defined for parameter 245669";
 	
 	

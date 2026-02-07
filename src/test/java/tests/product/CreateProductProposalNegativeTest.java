@@ -30,7 +30,7 @@ public class CreateProductProposalNegativeTest  extends BaseTest {
 	@Tag("Slow")
 	@Tag("Business-Logic")
 	@DisplayName("409: should return Product Duplicate error for duplicate ISBN")
-	public void ShouldRejestDuplicateProduct() throws InterruptedException {
+	public void ShouldRejectDuplicateProduct() throws InterruptedException {
 		
 		var req = ProductProposalFactory.valid().build();
 

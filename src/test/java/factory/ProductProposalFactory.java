@@ -14,10 +14,10 @@ public class ProductProposalFactory {
 		
 		
 		String isbn = faker.code().isbn13();
-
+		String randomNameSufix = faker.number().digits(4);		
 		
 		return dto.ProductProposalRequest.builder()
-				.name("Test Title of the Product")
+				.name("Test Title of the Product" + randomNameSufix)
 				.category(ProductProposalRequest.Category.builder()
 						.id("79157")
 						.build())

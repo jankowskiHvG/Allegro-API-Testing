@@ -16,7 +16,8 @@ public class Config {
 			return getMockValue(key);
 		}
 		
-		//Live mode
+		//LIVE mode
+		//Converts camelCase config keys to SCREAMING_SNAKE_CASE env variables
 		String envKey = "ALLEGRO_" + key.replaceAll("([A-Z])", "_$1").toUpperCase();
 		String value = System.getenv(envKey);
 		
@@ -27,7 +28,6 @@ public class Config {
 		if (value == null) {
 			throw new RuntimeException("Missing configuration for: " + envKey + ". Check if .env file exists or use -Denv=mock for demo mode.");
 		}
-		
 		return value;
 	}
 	

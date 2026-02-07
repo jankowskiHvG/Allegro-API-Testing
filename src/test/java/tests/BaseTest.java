@@ -19,12 +19,6 @@ public class BaseTest {
 				LogConfig.logConfig().enableLoggingOfRequestAndResponseIfValidationFails()
 				);
 		
-		//only for mock setup purpose:
-//		RestAssured.filters(new io.restassured.filter.log.RequestLoggingFilter(), 
-//                new io.restassured.filter.log.ResponseLoggingFilter(),
-//                new AllureRestAssured());
-//		
-//		
 		//Global Allure filter
 		RestAssured.filters(new AllureRestAssured());
 		
