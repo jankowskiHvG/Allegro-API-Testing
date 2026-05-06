@@ -85,7 +85,7 @@ Requires valid credentials provided via environment variables or a local .env fi
 (not committed to the repository).
 
 ---
-
+```
 ## Project structure (simplified)
 src
 ├── main/java
@@ -96,7 +96,7 @@ src
 │
 └── test
     ├── java/tests # API tests
-    └── resources  # WireMock stubs & schemas
+    └── resources  # WireMock stubs & schemas```
 
 ---
 
