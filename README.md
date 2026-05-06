@@ -96,8 +96,8 @@ src
 │
 └── test
     ├── java/tests # API tests
-    └── resources  # WireMock stubs & schemas```
-
+    └── resources  # WireMock stubs & schemas
+```
 ---
 
 ## Design notes
